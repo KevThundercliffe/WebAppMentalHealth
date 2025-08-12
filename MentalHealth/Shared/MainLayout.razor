@@ -1,24 +1,15 @@
 ﻿@inherits LayoutComponentBase
-@using MudBlazor
 
 <PageTitle>MentalHealth</PageTitle>
 
 <div style="text-align: right; margin-right:280px; position:relative; top:60px; gap:30px">
     <b style="color: white;">Quick Links</b>
-    <MudButton Variant="Variant.Text" Disabled="true" Style="background-color:#1d2b53; color:#fff1e8">Home</MudButton>
-    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8">Technique</MudButton>
+    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8" href="/">Home</MudButton>
+    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8" Href="/Techniques">Technique</MudButton>
     <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8">Emotion</MudButton>
     <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8">Support</MudButton>
 </div>
 
-<div style="display:flex;margin-left:150px; position:relative; top: 300px; gap:100px">  
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;">
-        Therapeutic Techniques
-    </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;">
-        Emotion Tracking
-    </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;">
-        Mental Health Support Request
-    </MudButton>
+<div>
+    @Body
 </div>

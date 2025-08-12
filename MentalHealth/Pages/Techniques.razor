@@ -1,0 +1,52 @@
+﻿@page "/Techniques" 
+@using MudBlazor
+
+
+<PageTitle>Techniques</PageTitle>
+
+<div style ="display:flex;margin-left:75px; position:relative; top: 250px; gap:100px">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextAnxiety">
+        Anxiety
+    </MudButton>
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextDepression">
+        Depression
+    </MudButton>
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextStress">
+        Stress
+    </MudButton>
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextSleepDeprivation">
+        Sleep Deprivation
+    </MudButton>
+</div>
+<div style="display:flex;margin-left:75px; position:relative; top: 300px;">
+    <MudCard Style="background-color:white; color:black; border-radius:6px; width:822px; height:450px; overflow:hidden">
+        <MudCardContent>
+            @_textValue
+        </MudCardContent>
+    </MudCard>
+</div>
+
+
+@code {
+    string _textValue = "Anxiety";
+    string anxiety = "Anxiety";
+    string depression = "Depression";
+    string stress = "Stress";
+    string sleepDeprivation = "Sleep Deprivation";
+    void changeTextAnxiety()
+    {
+        _textValue = anxiety;
+    }
+    void changeTextDepression()
+    {
+        _textValue = depression;
+    }
+    void changeTextStress()
+    {
+        _textValue = stress;
+    }
+    void changeTextSleepDeprivation()
+    {
+        _textValue = sleepDeprivation;
+    }
+}

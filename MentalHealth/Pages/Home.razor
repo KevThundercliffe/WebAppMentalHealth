@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<PageTitle>HomePage</PageTitle>
+
+<div style="display:flex;margin-left:150px; position:relative; top: 300px; gap:100px">  
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;" OnClick="NavigateToTechniques">
+        Therapeutic Techniques
+    </MudButton>
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;">
+        Emotion Tracking
+    </MudButton>
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;">
+        Mental Health Support Request
+    </MudButton>
+</div>
+
+@code {
+    void NavigateToTechniques()
+    {
+        Navigation.NavigateTo("/Techniques");
+    }
+}
