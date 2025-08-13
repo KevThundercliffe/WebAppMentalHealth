@@ -1,0 +1,89 @@
+﻿@page "/Emotions"
+
+<PageTitle>Emotions</PageTitle>
+<div style="position:absolute;margin-left:340px; margin-top:250px">
+    <b style="color: black; font-size:28px">How was your day?</b>
+</div>
+<div style="position:absolute;margin-left:200px; margin-top:352px">
+    <b style="color: black; font-size:28px">Self Care</b>
+</div>
+<div style="position:absolute;margin-left:148px; margin-top:435px">
+    <b style="color: black; font-size:28px">Responsiblity</b>
+</div>
+<div style="position:absolute;margin-left:175px; margin-top:520px">
+    <b style="color: black; font-size:28px">Well Being</b>
+</div>
+
+<div style="position:absolute;display:flex; margin-left:354px; margin-top:290px; gap:33px">
+    <b style="color: black; font-size:28px">1</b>
+    <b style="color: black; font-size:28px">2</b>
+    <b style="color: black; font-size:28px">3</b>
+    <b style="color: black; font-size:28px">4</b>
+    <b style="color: black; font-size:28px">5</b>
+</div>
+
+
+<div style="position:absolute;margin-left:325px; margin-top: 340px">
+    <MudPaper Elevation="4" Class="pa-4 mud-theme-primary" Style="max-width: 275px; margin: auto;">
+        <MudRadioGroup T="int" @bind-Value="Radio_Size" Row="true" Style="@($"color:{Colors.LightGreen.Accent3}; background:{Colors.BlueGray.Darken4};")">
+            <MudRadio T="int" Value="1" Color="Color.Primary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="2" Color="Color.Secondary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="3" Color="Color.Tertiary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="4" Color="Color.Secondary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="5" Color="Color.Primary" Size="Size.Medium"></MudRadio>
+        </MudRadioGroup>
+    </MudPaper>
+    <MudPaper Elevation="4" Class="pa-4 mud-theme-primary" Style="max-width: 275px; margin: auto;">
+        <MudRadioGroup T="int" @bind-Value="Radio_Size2" Row="true" Style="@($"color:{Colors.LightGreen.Accent3}; background:{Colors.BlueGray.Darken4};")">
+            <MudRadio T="int" Value="6" Color="Color.Primary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="7" Color="Color.Secondary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="8" Color="Color.Tertiary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="9" Color="Color.Secondary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="10" Color="Color.Primary" Size="Size.Medium"></MudRadio>
+        </MudRadioGroup>
+    </MudPaper>
+    <MudPaper Elevation="4" Class="pa-4 mud-theme-primary" Style="max-width: 275px; margin: auto;">
+        <MudRadioGroup T="int" @bind-Value="Radio_Size3" Row="true" Style="@($"color:{Colors.LightGreen.Accent3}; background:{Colors.BlueGray.Darken4};")">
+            <MudRadio T="int" Value="11" Color="Color.Primary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="12" Color="Color.Secondary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="13" Color="Color.Tertiary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="14" Color="Color.Secondary" Size="Size.Medium"></MudRadio>
+            <MudRadio T="int" Value="15" Color="Color.Primary" Size="Size.Medium"></MudRadio>
+        </MudRadioGroup>
+    </MudPaper>
+</div>
+
+<div style ="position:absolute;margin-left:325px; margin-top: 600px">
+    <MudPaper Height="300px" Width="380px">
+        <MudContainer MaxWidth="MaxWidth.Small">
+            <MudTextField @bind-Value="TextValue" Label="Additonal Information" Variant="Variant.Filled" Lines="13"></MudTextField>
+        </MudContainer>
+    </MudPaper>
+    
+</div>
+<div style="position:absolute;margin-left:650px; margin-top: 340px">
+    <MudPaper Height="200px" Width="350px">
+        <MudContainer>
+            <MudSelect @bind-Value="emotion" Label="Emotional State" Variant="Variant.Outlined">
+                <MudSelectItem Value="@("happy")">
+                    <img src="/images/SmileyFace.png" height="25" class="mr-1" /> happy
+                </MudSelectItem>
+                <MudSelectItem Value="@("angry")">
+                    <img src="/images/AngryFace.png" height="25" class="mr-1" /> angry
+                </MudSelectItem>
+                <MudSelectItem Value="@("sad")">
+                    <img src="/images/SadFace.png" height="25" class="mr-1" /> sad
+                </MudSelectItem>
+            </MudSelect>
+        </MudContainer>
+    </MudPaper>
+</div>
+
+
+@code {
+    public int Radio_Size { get; set; } = 3;
+    public int Radio_Size2 { get; set; } = 8;
+    public int Radio_Size3 { get; set; } = 13;
+    string emotion = "happy";
+    public string TextValue { get; set; }
+}

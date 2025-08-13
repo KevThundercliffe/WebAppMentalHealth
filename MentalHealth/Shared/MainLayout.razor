@@ -2,14 +2,23 @@
 
 <PageTitle>MentalHealth</PageTitle>
 
+@* Required *@
+<MudThemeProvider />
+<MudPopoverProvider />
+@* Needed for dialogs *@
+<MudDialogProvider />
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
 <div style="text-align: right; margin-right:280px; position:relative; top:60px; gap:30px">
     <b style="color: white;">Quick Links</b>
-    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8" href="/">Home</MudButton>
-    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8" Href="/Techniques">Technique</MudButton>
-    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8">Emotion</MudButton>
-    <MudButton Variant="Variant.Text" Disabled="false" Style="background-color:#1d2b53; color:#fff1e8">Support</MudButton>
+    <MudButton Variant="Variant.Text" Style="background-color:#1d2b53; color:#fff1e8" href="/">Home</MudButton>
+    <MudButton Variant="Variant.Text" Style="background-color:#1d2b53; color:#fff1e8" href="/Techniques">Technique</MudButton>
+    <MudButton Variant="Variant.Text" Style="background-color:#1d2b53; color:#fff1e8" href="/Emotions">Emotion</MudButton>
+    <MudButton Variant="Variant.Text" Style="background-color:#1d2b53; color:#fff1e8">Support</MudButton>
 </div>
 
 <div>
     @Body
 </div>
+

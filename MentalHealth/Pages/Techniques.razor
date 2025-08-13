@@ -20,19 +20,19 @@
 </div>
 <div style="display:flex;margin-left:75px; position:relative; top: 300px;">
     <MudCard Style="background-color:white; color:black; border-radius:6px; width:822px; height:450px; overflow:hidden">
-        <MudCardContent>
-            @_textValue
+        <MudCardContent Style="white-space:pre-wrap; font-size:24px">
+            @((MarkupString)_textValue)
         </MudCardContent>
     </MudCard>
 </div>
 
 
 @code {
-    string _textValue = "Anxiety";
-    string anxiety = "Anxiety";
-    string depression = "Depression";
-    string stress = "Stress";
-    string sleepDeprivation = "Sleep Deprivation";
+    string _textValue = "Resource:\nAnxiety NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/</a>";
+    string anxiety = "Resource:\nAnxiety NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/</a>";
+    string depression = "Resource:\nDepression NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/</a>";
+    string stress = "Resource:\nStress NHS: <a href=\"https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/\" target=\"_blank\">https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/</a>";
+    string sleepDeprivation = "Resource:\nSleep Deprivation NHS: <a href=\"https://www.nhs.uk/conditions/insomnia/\" target=\"_blank\">https://www.nhs.uk/conditions/insomnia/</a>";
     void changeTextAnxiety()
     {
         _textValue = anxiety;
