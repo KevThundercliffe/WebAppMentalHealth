@@ -1,0 +1,84 @@
+﻿@page "/MentalHealth"
+
+<PageTitle>MentalhHealth</PageTitle>
+
+<div style="position:absolute;margin-left:325px; margin-top: 300px">
+    <MudPaper Height="60px" Width="320px">
+        <MudContainer MaxWidth="MaxWidth.Small">
+            <MudTextField @bind-Value="UsernameTextValue" Label="Username" Variant="Variant.Filled" Lines="1"></MudTextField>
+        </MudContainer>
+    </MudPaper>
+</div>
+<div style ="position:absolute;margin-left:325px; margin-top: 400px">
+    <MudPaper Height="60px" Width="320px">
+        <MudContainer MaxWidth="MaxWidth.Small">
+            <MudTextField @bind-Value="EmailTextValue" Label="Email" Variant="Variant.Filled" Lines="1"></MudTextField>
+        </MudContainer>
+    </MudPaper>
+</div>
+<div style="position:absolute;margin-left:325px; margin-top: 580px">
+    <MudPaper Height="300px" Width="680px">
+        <MudContainer MaxWidth="MaxWidth.Small">
+            <MudTextField @bind-Value="AdditonalTextValue" Label="Additonal Information" Variant="Variant.Filled" Lines="13"></MudTextField>
+        </MudContainer>
+    </MudPaper>
+</div>
+<div style="position:absolute;margin-left:1200px; margin-top: 800px">
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@Open">Submit</MudButton>
+</div>
+
+<div style="position:absolute; top:540px; right:1200px">
+    <MudPopover Open="@_open" Fixed="true" Class="pa-4 mud-theme-primary">
+        <div class="d-flex flex-column">
+            <MudText>Successfully Submitted Data.</MudText>
+            <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+        </div>
+    </MudPopover>
+</div>
+
+<div style ="position:absolute;margin-left:1050px; margin-top: 300px">
+    <MudPaper Height="300px" Width="680px" Class="pa-4 darken-1">
+        <MudGrid>
+            <MudItem xs="12">
+                <MudField Label="What kind of issue do you have?" Variant="Variant.Text" InnerPadding="false">
+                    <MudSelect @bind-Value="issue" Label="" Variant="Variant.Outlined">
+                        <MudSelectItem Value="@("Financial")">
+                        </MudSelectItem>
+                        <MudSelectItem Value="@("Mental Health")">
+                        </MudSelectItem>
+                        <MudSelectItem Value="@("Studies")">
+                        </MudSelectItem>
+                    </MudSelect>
+                </MudField>
+            </MudItem>
+            <MudItem xs="12">
+                <MudField Label="How Urgent Is your Issue?" Variant="Variant.Filled" InnerPadding="false">
+                    <MudRadioGroup T="string">
+                        <MudRadio T="string">Not Very</MudRadio>
+                        <MudRadio T="string">Moderate</MudRadio>
+                        <MudRadio T="string">Very</MudRadio>
+                    </MudRadioGroup>
+                </MudField>
+            </MudItem>
+            <MudItem xs="12">
+                <MudField Label="Length Of Issue" Variant="Variant.Outlined" InnerPadding="false">
+                    <MudTextField @bind-Value="LengthTextValue" Variant="Variant.Filled" Lines="1"></MudTextField>
+                </MudField>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+</div>
+
+
+
+@code {
+    string UsernameTextValue { get; set; }
+    string EmailTextValue { get; set; }
+    string LengthTextValue { get; set; }
+    string AdditonalTextValue { get; set; }
+    private bool _open;
+    private void Open() => _open = true;
+    private void ToggleOpen() => _open = !_open;
+    private MudTheme Theme = new MudTheme();
+    string issue = "Financial";
+}

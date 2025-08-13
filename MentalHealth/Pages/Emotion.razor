@@ -59,7 +59,6 @@
             <MudTextField @bind-Value="TextValue" Label="Additonal Information" Variant="Variant.Filled" Lines="13"></MudTextField>
         </MudContainer>
     </MudPaper>
-    
 </div>
 <div style="position:absolute;margin-left:650px; margin-top: 340px">
     <MudPaper Height="200px" Width="350px">
@@ -78,6 +77,21 @@
         </MudContainer>
     </MudPaper>
 </div>
+<div style="width:300px; right:200px; top:250px;position:absolute">
+    <MudDatePicker PickerVariant="PickerVariant.Static" Date="@(DateTime.Today.AddDays(1))" />
+</div>
+<div style="position:absolute;margin-left:850px; margin-top: 800px">
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@Open">Submit</MudButton>
+</div>
+
+<div style="position:absolute; top:540px; right:1200px">
+    <MudPopover Open="@_open" Fixed="true" Class="pa-4 mud-theme-primary">
+        <div class="d-flex flex-column">
+            <MudText>Successfully Submitted Data.</MudText>
+            <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+        </div>
+    </MudPopover>
+</div>
 
 
 @code {
@@ -86,4 +100,8 @@
     public int Radio_Size3 { get; set; } = 13;
     string emotion = "happy";
     public string TextValue { get; set; }
+
+    private bool _open;
+    private void Open() => _open = true;
+    private void ToggleOpen() => _open = !_open;
 }

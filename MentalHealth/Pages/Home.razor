@@ -6,10 +6,10 @@
     <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;" OnClick="NavigateToTechniques">
         Therapeutic Techniques
     </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;" onclick="NavigateToEmotions">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;" OnClick="NavigateToEmotions">
         Emotion Tracking
     </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 490px; height: 339px;" OnClick="NavigateToMentalHealth">
         Mental Health Support Request
     </MudButton>
 </div>
@@ -22,5 +22,9 @@
     void NavigateToEmotions()
     {
         Navigation.NavigateTo("/Emotions");
+    }
+    void NavigateToMentalHealth()
+    {
+        Navigation.NavigateTo("/MentalHealth");
     }
 }
