@@ -5,16 +5,16 @@
 <PageTitle>Techniques</PageTitle>
 
 <div style ="display:flex;margin-left:75px; position:relative; top: 250px; gap:100px">
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextAnxiety">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextAnxiety" Disabled="isAnxietySelected">
         Anxiety
     </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextDepression">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextDepression" Disabled="isDepressionSelected">
         Depression
     </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextStress">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextStress" Disabled="isStressSelected">
         Stress
     </MudButton>
-    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextSleepDeprivation">
+    <MudButton Variant="Variant.Filled" Style="background-color: #1d2b53; color: white; width: 369px; height: 111px;" OnClick="changeTextSleepDeprivation" Disabled="isSleepDeprivationelected">
         Sleep Deprivation
     </MudButton>
 </div>
@@ -28,25 +28,45 @@
 
 
 @code {
-    string _textValue = "Resource:\nAnxiety NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/</a>";
-    string anxiety = "Resource:\nAnxiety NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/</a>";
-    string depression = "Resource:\nDepression NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/</a>";
-    string stress = "Resource:\nStress NHS: <a href=\"https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/\" target=\"_blank\">https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/</a>";
-    string sleepDeprivation = "Resource:\nSleep Deprivation NHS: <a href=\"https://www.nhs.uk/conditions/insomnia/\" target=\"_blank\">https://www.nhs.uk/conditions/insomnia/</a>";
+    string _textValue = "Resources for Anxiety:\nAnxiety NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/</a>";
+    string anxiety = "Resources for Anxiety:\nAnxiety NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder-gad/</a>";
+    string depression = "Resources for Depression:\nDepression NHS: <a href=\"https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/\" target=\"_blank\">https://www.nhs.uk/mental-health/conditions/depression-in-adults/overview/</a>";
+    string stress = "Resources for Stress:\nStress NHS: <a href=\"https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/\" target=\"_blank\">https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/</a>";
+    string sleepDeprivation = "Resources for Sleep Deprivation:\nSleep Deprivation NHS: <a href=\"https://www.nhs.uk/conditions/insomnia/\" target=\"_blank\">https://www.nhs.uk/conditions/insomnia/</a>";
     void changeTextAnxiety()
     {
         _textValue = anxiety;
+        isAnxietySelected = true;
+        isDepressionSelected = false;
+        isStressSelected = false;
+        isSleepDeprivationelected = false;
     }
     void changeTextDepression()
     {
         _textValue = depression;
+        isAnxietySelected = false;
+        isDepressionSelected = true;
+        isStressSelected = false;
+        isSleepDeprivationelected = false;
     }
     void changeTextStress()
     {
         _textValue = stress;
+        isAnxietySelected = false;
+        isDepressionSelected = false;
+        isStressSelected = true;
+        isSleepDeprivationelected = false;
     }
     void changeTextSleepDeprivation()
     {
         _textValue = sleepDeprivation;
+        isAnxietySelected = false;
+        isDepressionSelected = false;
+        isStressSelected = false;
+        isSleepDeprivationelected = true;
     }
+    bool isAnxietySelected = true;
+    bool isDepressionSelected = false;
+    bool isStressSelected = false;
+    bool isSleepDeprivationelected = false;
 }

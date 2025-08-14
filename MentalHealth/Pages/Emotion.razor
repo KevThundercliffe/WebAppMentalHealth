@@ -1,8 +1,8 @@
 ﻿@page "/Emotions"
 
 <PageTitle>Emotions</PageTitle>
-<div style="position:absolute;margin-left:340px; margin-top:250px">
-    <b style="color: black; font-size:28px">How was your day?</b>
+<div style="position:absolute;margin-left:370px; margin-top:250px">
+    <b style="color: black; font-size:28px">Day Checklist</b>
 </div>
 <div style="position:absolute;margin-left:200px; margin-top:352px">
     <b style="color: black; font-size:28px">Self Care</b>
@@ -81,7 +81,7 @@
     <MudDatePicker PickerVariant="PickerVariant.Static" Date="@(DateTime.Today)" />
 </div>
 <div style="position:absolute;margin-left:850px; margin-top: 800px">
-    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@Open">Submit</MudButton>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@Open">@submitButtonText</MudButton>
 </div>
 
 <div style="position:absolute; top:540px; right:1200px">
@@ -100,8 +100,13 @@
     public int Radio_Size3 { get; set; } = 13;
     string emotion = "happy";
     public string TextValue { get; set; }
+    public string submitButtonText = "Submit";
 
     private bool _open;
-    private void Open() => _open = true;
+    private void Open()
+    {
+        _open = true;
+        submitButtonText = "Resubmit";
+    } 
     private void ToggleOpen() => _open = !_open;
 }
